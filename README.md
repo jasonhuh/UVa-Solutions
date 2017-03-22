@@ -6,4 +6,5 @@ UVa-Solutions
 
 | # | Title | Solution |
 |---| ----- | -------- |
-|272|TEX Quotes| [C++](./UVa 621 - Secret Research/main.cpp)
+|272|TEX Quotes| [C++](./UVa 272 - TEX Quotes/src/TEX Quotes.cpp)|
+|621|Secret Research| [C++](./UVa 621 - Secret Research/Secret Research.cpp)|

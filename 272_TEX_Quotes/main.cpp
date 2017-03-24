@@ -18,7 +18,6 @@ public:
         }
         return res;
     }
-
 private:
     int _countDoubleQuote;
 };

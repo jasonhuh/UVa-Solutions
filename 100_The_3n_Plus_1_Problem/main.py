@@ -3,12 +3,10 @@ def cycle(memo, n):
         return memo[n]
     if n == 1:
         return 1
-    memo[n] = 1 + cycle(memo, n//2 if n % 2 == 0 else 3*n + 1)
+    memo[n] = 1 + cycle(memo, 3*n + 1 if n & 1 == 1 else n >> 1)
     return memo[n]
 
 def solve(memo, i, j):
-    if i > j:
-        i, j = j, i
     res = 0
     for n in range(i, j + 1):
         res = max(res, cycle(memo, n))
@@ -22,5 +20,5 @@ if __name__ == '__main__':
         except EOFError:
             break
             
-        ans = solve(memo, i, j)
+        ans = solve(memo, min(i, j), max(i, j))
         print('{} {} {}'.format(i, j, ans))

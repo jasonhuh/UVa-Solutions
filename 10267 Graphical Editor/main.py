@@ -10,24 +10,24 @@ def C(line, arr):
             arr[i][j] = 'O'
 
 def L(line, arr):
-    X, Y, C = int(line[1]), int(line[2]), str(line[3])
+    X, Y, C = int(line[1]), int(line[2]), line[3]
     arr[Y-1][X-1] = C
 
 def V(line, arr):
-    X, Y1, Y2, C = int(line[1]), int(line[2]), int(line[3]), str(line[4])
+    X, Y1, Y2, C = int(line[1]), int(line[2]), int(line[3]), line[4]
     lo, hi = min(Y1, Y2) - 1, max(Y1, Y2)
     for i in range(lo, hi):
         arr[i][X-1] = C
 
 def H(line, arr):
-    X1, X2, Y, C = int(line[1]), int(line[2]), int(line[3]), str(line[4])
+    X1, X2, Y, C = int(line[1]), int(line[2]), int(line[3]), line[4]
     lo, hi = min(X1, X2) - 1, max(X1, X2)
     for i in range(lo, hi):
         arr[Y-1][i] = C
 
 def K(line, arr):
     X1, Y1, X2, Y2, C = int(line[1]), int(line[2]), \
-                int(line[3]), int(line[4]), str(line[5])
+                int(line[3]), int(line[4]), line[5]
 
     fromX, toX = min(X1, X2) - 1, max(X1, X2)                
     fromY, toY = min(Y1, Y2) - 1, max(Y1, Y2)    
@@ -53,7 +53,7 @@ def dfs(line, arr, row, col, old_color, new_color):
 
 
 def F(line, arr):
-    X, Y, new_color = int(line[1]), int(line[2]), str(line[3])
+    X, Y, new_color = int(line[1]), int(line[2]), line[3]
     old_color = arr[Y-1][X-1]
     if old_color != new_color:
         dfs(line, arr, Y - 1, X - 1, old_color, new_color)

@@ -1,20 +1,21 @@
 def solve(s):
     s2 = ''
-    found = False
+    first = True
     for c in s:
         if c == '"':
-            if not found:
+            if first:
                 s2 += '``'
-                found = True
             else:
                 s2 += "''"
+            first = False if first else True
+
         else:
             s2 += c    
     return s2
 
 def test_simple():
-    assert solve('"To be or not to be," quoth the Bard, "that') \
-            == "``To be or not to be,'' quoth the Bard, ''that"
+    assert solve('"To be or not to be," quoth the bard, "that is the question."') \
+            == "``To be or not to be,'' quoth the bard, ``that is the question.''"
 
 if __name__ == '__main__':
     while True:

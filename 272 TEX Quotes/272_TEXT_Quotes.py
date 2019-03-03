@@ -1,17 +1,12 @@
 def solve(s):
-    s2 = ''
-    first = True
+    res, first = '', True
     for c in s:
         if c == '"':
-            if first:
-                s2 += '``'
-            else:
-                s2 += "''"
+            res += '``' if first else "''"
             first = False if first else True
-
         else:
-            s2 += c    
-    return s2
+            res += c    
+    return res
 
 def test_simple():
     assert solve('"To be or not to be," quoth the bard, "that is the question."') \

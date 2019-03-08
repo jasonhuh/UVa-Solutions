@@ -1,6 +1,6 @@
 def solve(a, b, c, d):
     def get_degree(x, y):
-        return ((x - y + 40) % 40) * 9
+        return ((x - y) % 40) * 9
     return 1080 + get_degree(a, b) + get_degree(c, b) + get_degree(c, d)
 
 def test_simple():
